@@ -1,1 +1,2 @@
-All of the data will be saved into Raw_Data folder. 
+## 2019-10-02 Minke
+* I recommand that all the members will have a separate folder to store their own stuff. And then we keep modifying this file to say `I have done xxx part.`
