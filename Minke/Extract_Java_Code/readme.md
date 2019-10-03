@@ -1,5 +1,5 @@
-Parse the `,v` files. 
+Parse the `,v` files and get .java files. 
 
-Get the version logs for each file. For now we only focus on `.java,v` files. 
+The results is in Extract_Java_Code.zip 
 
  
