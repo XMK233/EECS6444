@@ -11,3 +11,6 @@
 	* Even they managed to make it, such kind of methods may not be scalalbe or used under different production scenario. 
 	* Comparing with leaving out some should-be-considered bugID, the inconsistency caused by our way (not considering pattern but extract numbers blindly) should be smaller. **This predication is not verified**. 
 * Under dir: Minke\Extract_File_Commit_Info, you can find 2 new files: `org.eclipse.jdt.core_no_pattern.csv` and `org.eclipse.platform_no_pattern`. **Those files contains no patterns. It contains the number and dates of the  commits**. 
+
+## 2019-10-10 Minke
+* I have generated the post and pre release bug. In [https://github.com/XMK233/EECS6444/tree/master/Minke/Merge_Tables](https://github.com/XMK233/EECS6444/tree/master/Minke/Merge_Tables). 
