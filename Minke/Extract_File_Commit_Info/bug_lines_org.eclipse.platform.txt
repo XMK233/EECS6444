@@ -1,0 +1,99 @@
+@Bug 181307 org.eclipse.platform contains old startup.jar
+@Bug 162833 - Java WebStart support is broken with J2SE 6.0
+@Bug 150669 - startup.jar cannot run on ee.min 1.1
+@Backed out of changes for Bugzilla Bug 150669 - startup.jar cannot run on ee.min 1.1
+@Fix for Bugzilla Bug 150669 - startup.jar cannot run on ee.min 1.1
+@Bug 154011 - Development classpath for framework extensions only considers bin output folders
+@Bug 138764 - Compile errors against foundation 1.0: org.eclipse.platform
+@Bug 169691 - Java WebStart support is broken with J2SE 6.0
+@Bug 209192 Eclipse fails to startup because the library swt-win32-3235.dll couldn't be loaded.
+@Bug 98388 - Malformed URLs in org.eclipse.core.launcher.Main.decode() cause Eclipse to crash
+@Bug 133193 - [launcher] Improve vm version error message and dialog title
+@Bug 102192 - What is "eof" marker in config.ini used for?
+@Bug 106046 - Errors in log when running JNLP application
+@Bug 102866 - Need API for updating the splash screen's progress bar
+@Bug 88937 Unable to relaunch when it was quit from Dock while asking for workspace setting
+@Bug 106046 - Errors in log when running JNLP application
+@85269 Minimized intro takes up too much space
+@Bug 90645 - -debug and -Dosgi.debug are not equivalent
+@Bug 95223 - accept install relative locations for osgi.sharedConfiguration.area
+@Bug 95910 - 'org.eclipse.osgi_3.1.0.jar!/eclipse.properties not found' on startup
+@Bug 93329 - Eclipse 3.1 and 3.0 don't run on Windows ME
+@Bug 88759 - [osgi] standalone osgi never moves to the "started" state
+@Bug 83205 - shutdown did not complete
+@Bug 73514 - [Main] NP exception in core.launcher.Main.getInstallLocation() - doesn't check CodeSource for null
+@Bug 90346 - org.eclipse.platform fails launching framework in M6 if a framework extension is used
+@Bug 87604 - Date in log is still written in two different formats
+@Bug 85000 - [launcher] remove the code that supports "." in the eclipse.properties
+@Bug 85333 - [jars] Missing splash screen (+ icons) with runtime workbench
+@Bug 77152 org.eclipse.platform main does not support custom loader
+@Bug 68926 [osgi] Splash screen selection does not honor the -nl argument
+@Bug 85067 [launcher] add in Main the code that does the magic on the first letter of the path
+@Bug 70564 - Unable to start eclipse with Java 2 Security enabled.
+@Bug 87096 - Main in startup.jar needs to use osgi.parentClassloader
+@Bug 85474 - Main assumes framework extensions have eclipse.properties
+@Bug 87765 - config.ini loaded twice
+@Bug 80149 - JNLP Support
+@Bug 81463 - [launcher] Launcher and Core issues regarding -showSplash
+@Bug 81463 [launcher] Launcher and Core issues regarding -showSplash
+@Bug 82068 - Eclipse crashes without proper error to the user when the java version is not new enough
+@bug 78078 : 3.1M3 Cannot launch runtime workspace
+@Bug 69782
+@Bug 72514
+@Bug 72514
+@Bug 69782
+@Bug 62007 [Workbench] preference to set the initial workspace location.
+@Bug 64244
+@Bug 33974
+@Bug 62118  [startup performance] org.eclipse.core.runtime.adaptor.EclipseStarter.logUnresolvedBundles uses too much CPU
+@Bug 28656 [launcher] Can't run eclipse from a UNC pathname
+@Bug 56601
+@Fix for Bug 38653 [launcher] logs produced by the launcher and the platform are not equal
+@56601 - Exception launching with no args
+@fixes for 55768
+@Fix for bug 55768: audit the logging in runtime
+@fix for bug 48937, put extra args at the beginning
+@Fix for Bug 42415 'Completing the install' on every start
+@Fix for Bug 44487 eclipse does not start on hpux
+@Fix for bug 38399 [runtime] could use java.nio locks to portably prevent running multiple instances
+@Fix for Bug 37686 [plan item] Remove configuration state from workspace metadata area
+@Fix for Bug 13121 - [startup] update javadoc for org.eclipse.core.launcher.Main
+@Fix for 21294.
+@20063
+@Fix for 21294 - Issue more appropriate message when workbench already running.
+@Fix for bug 7711 -- handling of DBCS characters when decoding URLs
+@20063
+@Fix for 9027 and 18635.
+@Re-released revision 1.11 into v20020531 version.
+@Back out of 9027 until we ensure that we are checking
+@Fixes for 9027 and 16206.
+@16456
+@Fix for bugs 16429 and 16430.
+@16215 (core changes)
+@Fix for 16369.
+@Fix for 16369.
+@Fix for 16211.
+@Fix for 15140.
+@15987
+@Migrage DJs changes for I20020510
+@Bug 181307 org.eclipse.platform contains old startup.jar
+@Bug 162833 - Java WebStart support is broken with J2SE 6.0
+@Bug 162097 - WebStartMain crashes
+@Bug 138764 - Compile errors against foundation 1.0: org.eclipse.platform
+@bug 162097 - 	WebStartMain crashes
+@Bug 169691 - Java WebStart support is broken with J2SE 6.0
+@Bug 169691 - Java WebStart support is broken with J2SE 6.0
+@Bug 132372 - need to update osgi.bundles list in config.ini
+@Bug 106046 - Errors in log when running JNLP application
+@85269 Minimized intro takes up too much space
+@Bug 106046 - Errors in log when running JNLP application
+@Fix for Bug 66677
+@Bug 62496
+@Bug 55607 - cheatsheets should not depend on org.eclipse.ui.intro
+@Bug 222378 Welcome page links to classic update
+@Bug 100654  Intro actions safe workaroud for Mac. actions
+@Bug 278290 -  [Intro] Make the RSS news reader reusable
+@Bug 196204 - [Intro] SWT Welcome RSS Feed doesn't Work
+@NEW - bug 196672: [Intro] SWT Welcome RSS Feed doesn't Work
+https://bugs.eclipse.org/bugs/show_bug.cgi?id=196672
+@Bug 278290 -  [Intro] Make the RSS news reader reusable
