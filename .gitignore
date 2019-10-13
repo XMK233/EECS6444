@@ -89,3 +89,7 @@ fabric.properties
 .idea/httpRequests
 
 Minke/PipeLine/eclipse_release_commit.csv
+Minke/PipeLine/eclipse_mainRelease_fastRelease_commit.csv
+Minke/PipeLine/eclipse_post_bug.csv
+Minke/PipeLine/eclipse_post_bug.csv
+Minke/PipeLine/eclipse_pre_bug.csv
