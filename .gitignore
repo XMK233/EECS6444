@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 
 Raw_Data
-*.java
+Minke/**/*.java
 
 ### Windows template
 # Windows thumbnail cache files
