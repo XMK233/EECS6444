@@ -17,6 +17,7 @@ public class ClassMetricsDataLoader implements IClassMetricsDataLoader {
 	private static final DataFormatter DATA_FORMATTER = new DataFormatter();
 	
 	private static int CLASS_NAME_INDEX;
+	private static int TYPE_INDEX;
 	private static int LOC_INDEX;
 	private static int ANONYMOUS_TYPE_INDEX;
 	private static int NUM_OF_STATIC_METHOD_INDEX;
@@ -45,6 +46,7 @@ public class ClassMetricsDataLoader implements IClassMetricsDataLoader {
 				
 				ClassMetrics classMetrics = data.get(className);
 				classMetrics.setClassName(className);
+				classMetrics.setType(DATA_FORMATTER.formatCellValue(row.getCell(TYPE_INDEX)));
 				classMetrics.setLoc(getIntValue(row.getCell(LOC_INDEX)));
 				classMetrics.setAnonymousClassesQty(getIntValue(row.getCell(ANONYMOUS_TYPE_INDEX)));
 				classMetrics.setNumOfStaticMethod(getIntValue(row.getCell(NUM_OF_STATIC_METHOD_INDEX)));
@@ -69,6 +71,10 @@ public class ClassMetricsDataLoader implements IClassMetricsDataLoader {
 			switch (DATA_FORMATTER.formatCellValue(cell)) {
 			case "class":
 				CLASS_NAME_INDEX = cell.getColumnIndex();
+				break;
+				
+			case "type":
+				TYPE_INDEX = cell.getColumnIndex();
 				break;
 				
 			case "loc":

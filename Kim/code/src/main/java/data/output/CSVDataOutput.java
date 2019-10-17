@@ -20,6 +20,9 @@ public class CSVDataOutput {
 				
 				sb.append(metricOfClass.getClassName());
 				sb.append(",");
+				
+				appendType(sb, metricOfClass);
+				
 				sb.append(metricOfClass.getLoc());
 				sb.append(",");
 				sb.append(metricOfClass.getAnonymousClassesQty());
@@ -68,6 +71,8 @@ public class CSVDataOutput {
 					sb.append(metricOfMethod.getMaxFanOut());
 					sb.append(",");
 					sb.append(metricOfMethod.getAverageFanOut());
+				} else {
+					sb.append(",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0");
 				}
 				sb.append("\n");
 			}
@@ -80,8 +85,20 @@ public class CSVDataOutput {
 		}
 	}
 
+	private void appendType(StringBuilder sb, ClassMetrics metricOfClass) {
+		if("class".equals(metricOfClass.getType())) {
+			sb.append("1,0,");
+		} else if("interface".equals(metricOfClass.getType())) {
+			sb.append("0,1,");
+		} else {
+			sb.append("0,0,");
+		}
+	}
+
 	private void writeHeaders(FileWriter csvWriter) throws IOException {
-		csvWriter.append("className,");
+		csvWriter.append("fileName,");
+		csvWriter.append("numOfClass,");
+		csvWriter.append("numOfInterface,");
 		csvWriter.append("loc,");
 		csvWriter.append("anonymousClassesQty,");
 		csvWriter.append("numOfStaticMethod,");

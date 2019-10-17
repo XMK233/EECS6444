@@ -2,6 +2,7 @@ package data.structure;
 
 public class ClassMetrics {
 	private String className;
+	private String type;
 	
 	private int loc;
 	private int anonymousClassesQty;
@@ -17,6 +18,14 @@ public class ClassMetrics {
 
 	public void setClassName(String className) {
 		this.className = className;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public int getLoc() {
@@ -76,9 +85,9 @@ public class ClassMetrics {
 
 	@Override
 	public String toString() {
-		return "ClassMetrics [className=" + className + ", loc=" + loc + ", anonymousClassesQty=" + anonymousClassesQty
-				+ ", numOfStaticMethod=" + numOfStaticMethod + ", numOfStaticField=" + numOfStaticField
-				+ ", numOfMethod=" + numOfMethod + ", numOfField=" + numOfField + ", methodMetrics=" + methodMetrics
-				+ "]";
+		return "ClassMetrics [className=" + className + ", type=" + type + ", loc=" + loc + ", anonymousClassesQty="
+				+ anonymousClassesQty + ", numOfStaticMethod=" + numOfStaticMethod + ", numOfStaticField="
+				+ numOfStaticField + ", numOfMethod=" + numOfMethod + ", numOfField=" + numOfField + ", methodMetrics="
+				+ methodMetrics + "]";
 	}
 }
