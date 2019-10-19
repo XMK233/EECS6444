@@ -1,7 +1,7 @@
 package data.structure;
 
-public class ClassMetrics {
-	private String className;
+public class FileMetrics {
+	private String fileName;
 	private String type;
 	
 	private int loc;
@@ -12,12 +12,12 @@ public class ClassMetrics {
 	private int numOfField;
 	private MethodMetrics methodMetrics;
 	
-	public String getClassName() {
-		return className;
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setClassName(String className) {
-		this.className = className;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	public String getType() {
@@ -85,7 +85,7 @@ public class ClassMetrics {
 
 	@Override
 	public String toString() {
-		return "ClassMetrics [className=" + className + ", type=" + type + ", loc=" + loc + ", anonymousClassesQty="
+		return "FileMetrics [fileName=" + fileName + ", type=" + type + ", loc=" + loc + ", anonymousClassesQty="
 				+ anonymousClassesQty + ", numOfStaticMethod=" + numOfStaticMethod + ", numOfStaticField="
 				+ numOfStaticField + ", numOfMethod=" + numOfMethod + ", numOfField=" + numOfField + ", methodMetrics="
 				+ methodMetrics + "]";

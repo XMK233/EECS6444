@@ -11,12 +11,12 @@ import data.process.IMethodMetricsProcessor;
 import data.process.IMetricsJoiner;
 import data.process.MethodMetricsProcessor;
 import data.process.MetricsJoiner;
-import data.structure.ClassMetrics;
+import data.structure.FileMetrics;
 import data.structure.MethodMetrics;
 
 public class Main {
-	public static final String XLSX_CLASS_FILE_PATH = "./src/main/resources/class.xlsx";
-	public static final String XLSX_METRIC_FILE_PATH = "./src/main/resources/method.xlsx";
+	public static final String XLSX_CLASS_FILE_PATH = "D:\\eclipsesourcecode\\eclipse-3.5\\class.xlsx";
+	public static final String XLSX_METRIC_FILE_PATH = "D:\\eclipsesourcecode\\eclipse-3.5\\method.xlsx";
 
 	private static final IMethodMetricsDataLoader METHOD_DATALOADER = new MethodMetricsDataLoader();
 	private static final IMethodMetricsProcessor METHOD_METRICS_PROCESSOR = new MethodMetricsProcessor();
@@ -27,8 +27,6 @@ public class Main {
 	
 	private static final CSVDataOutput DATA_OUTPUT = new CSVDataOutput();
 
-	private static final SanityTest SANITY_TEST = new SanityTest();
-
 	public static void main(String[] args) {
 
 		Map<String, MethodMetrics> methodMetrics = METHOD_DATALOADER.loadMethodMetrics(XLSX_METRIC_FILE_PATH);
@@ -37,15 +35,13 @@ public class Main {
 
 		//System.out.println("Data after processing: " + methodMetrics);
 
-		SANITY_TEST.sanityTest(methodMetrics);
-
-		Map<String, ClassMetrics> classMetrics = CLASS_DATALOADER.loadClassMetrics(XLSX_CLASS_FILE_PATH);
+		Map<String, FileMetrics> fileMetrics = CLASS_DATALOADER.loadClassMetrics(XLSX_CLASS_FILE_PATH);
 
 		//System.out.println("ClassMetrics: " + classMetrics);
 
-		classMetrics = METRICS_JOINER.joinMetrics(classMetrics, methodMetrics);
+		fileMetrics = METRICS_JOINER.joinMetrics(fileMetrics, methodMetrics);
 		
-		DATA_OUTPUT.outputCSVFile("3.1", classMetrics);
+		DATA_OUTPUT.outputCSVFile("3.5", fileMetrics);
 	}
 
 }

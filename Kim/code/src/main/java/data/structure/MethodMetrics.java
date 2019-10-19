@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MethodMetrics {
-	private String className;
+	private String fileName;
 	
 	private List<Integer> allLineOfCode = new ArrayList<>();
 	private int totalLoc;
@@ -31,16 +31,16 @@ public class MethodMetrics {
 	private int maxFanOut;
 	private double averageFanOut;
 	
-	public MethodMetrics(String className) {
-		this.className = className;
+	public MethodMetrics(String fileName) {
+		this.fileName = fileName;
 	}
 
-	public String getClassName() {
-		return className;
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setClassName(String className) {
-		this.className = className;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	public List<Integer> getAllLineOfCode() {
@@ -205,7 +205,7 @@ public class MethodMetrics {
 
 	@Override
 	public String toString() {
-		return "MethodMetrics [className=" + className + ", totalLoc=" + totalLoc + ", maxLoc=" + maxLoc
+		return "MethodMetrics [fileName=" + fileName + ", totalLoc=" + totalLoc + ", maxLoc=" + maxLoc
 				+ ", averageLoc=" + averageLoc + ", totalNestedBlockDepth=" + totalNestedBlockDepth
 				+ ", maxNestedBlockDepth=" + maxNestedBlockDepth + ", averageNestedBlockDepth="
 				+ averageNestedBlockDepth + ", totalParameters=" + totalParameters + ", maxParameters=" + maxParameters

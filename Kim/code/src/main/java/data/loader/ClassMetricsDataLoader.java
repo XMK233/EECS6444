@@ -11,12 +11,12 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-import data.structure.ClassMetrics;
+import data.structure.FileMetrics;
 
 public class ClassMetricsDataLoader implements IClassMetricsDataLoader {
 	private static final DataFormatter DATA_FORMATTER = new DataFormatter();
 	
-	private static int CLASS_NAME_INDEX;
+	private static int FILE_NAME_INDEX;
 	private static int TYPE_INDEX;
 	private static int LOC_INDEX;
 	private static int ANONYMOUS_TYPE_INDEX;
@@ -26,8 +26,8 @@ public class ClassMetricsDataLoader implements IClassMetricsDataLoader {
 	private static int NUM_OF_FIELD_INDEX;
 	
 	@Override
-	public Map<String, ClassMetrics> loadClassMetrics(String classPath) {
-		Map<String, ClassMetrics> data = new HashMap<>();
+	public Map<String, FileMetrics> loadClassMetrics(String classPath) {
+		Map<String, FileMetrics> data = new HashMap<>();
 		
 		try {
 			Workbook workbook = WorkbookFactory.create(new File(classPath));
@@ -38,14 +38,14 @@ public class ClassMetricsDataLoader implements IClassMetricsDataLoader {
 			for(int i = 1; i <= firstSheet.getLastRowNum(); i++) {
 				Row row = firstSheet.getRow(i);
 				
-				String className = DATA_FORMATTER.formatCellValue(row.getCell(CLASS_NAME_INDEX));
+				String fileName = DATA_FORMATTER.formatCellValue(row.getCell(FILE_NAME_INDEX)).substring(21);
 				
-				if(!data.containsKey(className)) {
-					data.put(className, new ClassMetrics());
+				if(!data.containsKey(fileName)) {
+					data.put(fileName, new FileMetrics());
 				}
 				
-				ClassMetrics classMetrics = data.get(className);
-				classMetrics.setClassName(className);
+				FileMetrics classMetrics = data.get(fileName);
+				classMetrics.setFileName(fileName);
 				classMetrics.setType(DATA_FORMATTER.formatCellValue(row.getCell(TYPE_INDEX)));
 				classMetrics.setLoc(getIntValue(row.getCell(LOC_INDEX)));
 				classMetrics.setAnonymousClassesQty(getIntValue(row.getCell(ANONYMOUS_TYPE_INDEX)));
@@ -69,8 +69,8 @@ public class ClassMetricsDataLoader implements IClassMetricsDataLoader {
 	private void initializeIndexes(Row row) {
 		for(Cell cell : row) {
 			switch (DATA_FORMATTER.formatCellValue(cell)) {
-			case "class":
-				CLASS_NAME_INDEX = cell.getColumnIndex();
+			case "file":
+				FILE_NAME_INDEX = cell.getColumnIndex();
 				break;
 				
 			case "type":

@@ -2,8 +2,8 @@ package data.loader;
 
 import java.util.Map;
 
-import data.structure.ClassMetrics;
+import data.structure.FileMetrics;
 
 public interface IClassMetricsDataLoader {
-	public Map<String, ClassMetrics> loadClassMetrics(String classPath); 
+	public Map<String, FileMetrics> loadClassMetrics(String classPath); 
 }

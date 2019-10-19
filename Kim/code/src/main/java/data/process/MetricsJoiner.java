@@ -2,15 +2,15 @@ package data.process;
 
 import java.util.Map;
 
-import data.structure.ClassMetrics;
+import data.structure.FileMetrics;
 import data.structure.MethodMetrics;
 
 public class MetricsJoiner implements IMetricsJoiner {
 	@Override
-	public Map<String, ClassMetrics> joinMetrics(Map<String, ClassMetrics> classMetrics, Map<String, MethodMetrics> methodMetrics) {
+	public Map<String, FileMetrics> joinMetrics(Map<String, FileMetrics> classMetrics, Map<String, MethodMetrics> methodMetrics) {
 		classMetrics.keySet().forEach(key -> {
-			ClassMetrics metricForClass = classMetrics.get(key);
-			String className = metricForClass.getClassName();
+			FileMetrics metricForClass = classMetrics.get(key);
+			String className = metricForClass.getFileName();
 			
 			if(methodMetrics.containsKey(className)) {
 				metricForClass.setMethodMetrics(methodMetrics.get(className));

@@ -16,7 +16,7 @@ import data.structure.MethodMetrics;
 public class MethodMetricsDataLoader implements IMethodMetricsDataLoader {
 	private static final DataFormatter DATA_FORMATTER = new DataFormatter();
 
-	private static int CLASS_NAME_INDEX;
+	private static int FILE_NAME_INDEX;
 	private static int LOC_INDEX;
 	private static int MAX_NESTED_BLOCK_INDEX;
 	private static int PARAMETERS_INDEX;
@@ -36,13 +36,13 @@ public class MethodMetricsDataLoader implements IMethodMetricsDataLoader {
 			for (int i = 1; i <= firstSheet.getLastRowNum(); i++) {
 				Row row = firstSheet.getRow(i);
 
-				String className = DATA_FORMATTER.formatCellValue(row.getCell(CLASS_NAME_INDEX));
+				String fileName = DATA_FORMATTER.formatCellValue(row.getCell(FILE_NAME_INDEX)).substring(21);
 				
-				if (!data.containsKey(className)) {
-					data.put(className, new MethodMetrics(className));
+				if (!data.containsKey(fileName)) {
+					data.put(fileName, new MethodMetrics(fileName));
 				}
 				
-				MethodMetrics methodMetrics = data.get(className);
+				MethodMetrics methodMetrics = data.get(fileName);
 				methodMetrics.getAllLineOfCode().add(getIntValue(row.getCell(LOC_INDEX)));
 				methodMetrics.getNestedBlockDepth().add(getIntValue(row.getCell(MAX_NESTED_BLOCK_INDEX)));
 				methodMetrics.getParameters().add(getIntValue(row.getCell(PARAMETERS_INDEX)));
@@ -62,8 +62,8 @@ public class MethodMetricsDataLoader implements IMethodMetricsDataLoader {
 	private void initializeIndexes(Row row) {
 		for(Cell cell : row) {
 			switch(DATA_FORMATTER.formatCellValue(cell)) {
-			case "class":
-				CLASS_NAME_INDEX = cell.getColumnIndex();
+			case "file":
+				FILE_NAME_INDEX = cell.getColumnIndex();
 				break;
 				
 			case "loc":

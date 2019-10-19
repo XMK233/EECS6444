@@ -4,21 +4,21 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
-import data.structure.ClassMetrics;
+import data.structure.FileMetrics;
 import data.structure.MethodMetrics;
 
 public class CSVDataOutput {
-	public void outputCSVFile(String version, Map<String, ClassMetrics> classMetrics) {
+	public void outputCSVFile(String version, Map<String, FileMetrics> fileMetrics) {
 		try {
 			FileWriter csvWriter = new FileWriter(String.format("./src/main/resources/eclipse-%s-metrics.csv", version));
 			writeHeaders(csvWriter);
 			
 			StringBuilder sb = new StringBuilder();
 			
-			for(String className : classMetrics.keySet()) {
-				ClassMetrics metricOfClass = classMetrics.get(className);
+			for(String fileName : fileMetrics.keySet()) {
+				FileMetrics metricOfClass = fileMetrics.get(fileName);
 				
-				sb.append(metricOfClass.getClassName());
+				sb.append(metricOfClass.getFileName());
 				sb.append(",");
 				
 				appendType(sb, metricOfClass);
@@ -85,7 +85,7 @@ public class CSVDataOutput {
 		}
 	}
 
-	private void appendType(StringBuilder sb, ClassMetrics metricOfClass) {
+	private void appendType(StringBuilder sb, FileMetrics metricOfClass) {
 		if("class".equals(metricOfClass.getType())) {
 			sb.append("1,0,");
 		} else if("interface".equals(metricOfClass.getType())) {
